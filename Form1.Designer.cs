@@ -170,6 +170,7 @@
             this.TextBoxOut.Location = new System.Drawing.Point(885, 3);
             this.TextBoxOut.Multiline = true;
             this.TextBoxOut.Name = "TextBoxOut";
+            this.TextBoxOut.ReadOnly = true;
             this.TextBoxOut.Size = new System.Drawing.Size(496, 455);
             this.TextBoxOut.TabIndex = 13;
             this.TextBoxOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
