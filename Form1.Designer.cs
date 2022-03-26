@@ -38,7 +38,7 @@
             this.OpenTM = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.HelpButton2 = new System.Windows.Forms.Button();
             this.TextBoxOut = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -147,18 +147,18 @@
             this.label2.Text = "image name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // HelpButton2
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(61, 421);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 28);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "help 2";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.HelpButton2.BackColor = System.Drawing.Color.DimGray;
+            this.HelpButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.HelpButton2.ForeColor = System.Drawing.Color.White;
+            this.HelpButton2.Location = new System.Drawing.Point(61, 421);
+            this.HelpButton2.Name = "HelpButton2";
+            this.HelpButton2.Size = new System.Drawing.Size(55, 28);
+            this.HelpButton2.TabIndex = 11;
+            this.HelpButton2.Text = "help 2";
+            this.HelpButton2.UseVisualStyleBackColor = false;
+            this.HelpButton2.Click += new System.EventHandler(this.HelpButton2_Click);
             // 
             // TextBoxOut
             // 
@@ -182,7 +182,7 @@
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1384, 461);
             this.Controls.Add(this.TextBoxOut);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.HelpButton2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.OpenTM);
@@ -214,7 +214,7 @@
         private System.Windows.Forms.Button OpenTM;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button HelpButton2;
         private System.Windows.Forms.TextBox TextBoxOut;
     }
 }

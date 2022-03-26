@@ -64,7 +64,7 @@ namespace taskkill_gui
             LogoText.Text = "taskkill gui (" + ProcID.ToString() + ")";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void HelpButton2_Click(object sender, EventArgs e)
         {
             this.Size = new Size(1400, 500);
             Process process = new Process();
