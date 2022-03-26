@@ -76,7 +76,6 @@ namespace taskkill_gui
             process.StartInfo = startInfo;
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
-            //MessageBox.Show(output);
             TextBoxOut.Text = output;
             process.WaitForExit();
         }
