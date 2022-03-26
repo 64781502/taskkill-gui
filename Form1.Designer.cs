@@ -194,6 +194,7 @@
             this.Controls.Add(this.PIDBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "GUIForm";
             this.Text = "taskkill";
             this.Load += new System.EventHandler(this.GUIForm_Load);
