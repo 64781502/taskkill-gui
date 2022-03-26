@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace taskkill_gui
 {
@@ -58,8 +59,26 @@ namespace taskkill_gui
 
         private void GUIForm_Load(object sender, EventArgs e)
         {
+            this.Size = new Size(900, 500);
             int ProcID = Process.GetProcessesByName("taskkill_gui")[0].Id;
             LogoText.Text = "taskkill gui (" + ProcID.ToString() + ")";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Size = new Size(1400, 500);
+            Process process = new Process();
+            ProcessStartInfo startInfo = new ProcessStartInfo();
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            startInfo.FileName = "cmd.exe";
+            startInfo.Arguments = "/c tasklist | sort /R /+58"; //tasklist
+            process.StartInfo = startInfo;
+            process.Start();
+            string output = process.StandardOutput.ReadToEnd();
+            //MessageBox.Show(output);
+            TextBoxOut.Text = output;
+            process.WaitForExit();
         }
     }
 }

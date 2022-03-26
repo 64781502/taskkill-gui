@@ -38,6 +38,8 @@
             this.OpenTM = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.TextBoxOut = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // PIDBox
@@ -125,10 +127,9 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(356, 221);
+            this.label3.Location = new System.Drawing.Point(356, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 28);
             this.label3.TabIndex = 9;
@@ -146,12 +147,41 @@
             this.label2.Text = "image name";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(61, 421);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 28);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "help 2";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TextBoxOut
+            // 
+            this.TextBoxOut.BackColor = System.Drawing.Color.DimGray;
+            this.TextBoxOut.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TextBoxOut.Cursor = System.Windows.Forms.Cursors.Help;
+            this.TextBoxOut.Font = new System.Drawing.Font("MS Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TextBoxOut.ForeColor = System.Drawing.Color.White;
+            this.TextBoxOut.Location = new System.Drawing.Point(885, 3);
+            this.TextBoxOut.Multiline = true;
+            this.TextBoxOut.Name = "TextBoxOut";
+            this.TextBoxOut.Size = new System.Drawing.Size(496, 455);
+            this.TextBoxOut.TabIndex = 13;
+            this.TextBoxOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // GUIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(884, 461);
+            this.ClientSize = new System.Drawing.Size(1384, 461);
+            this.Controls.Add(this.TextBoxOut);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.OpenTM);
@@ -183,6 +213,8 @@
         private System.Windows.Forms.Button OpenTM;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TextBoxOut;
     }
 }
 
