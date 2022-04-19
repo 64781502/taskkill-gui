@@ -70,11 +70,11 @@
             // 
             this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(233, 265);
+            this.label1.Location = new System.Drawing.Point(221, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 13);
+            this.label1.Size = new System.Drawing.Size(115, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "process identifier";
+            this.label1.Text = "process identifier (PID)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LogoText
