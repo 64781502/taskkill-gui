@@ -53,17 +53,25 @@ namespace taskkill_gui
 
         private void GUIForm_Load(object sender, EventArgs e)
         {
-            Size = new Size(900, 500);
-
-            ManagementObjectSearcher Search = new ManagementObjectSearcher("Select TotalPhysicalMemory From Win32_ComputerSystem");
-            foreach (ManagementObject Mobject in Search.Get())
+            try
             {
-                double Ram_Bytes = (Convert.ToDouble(Mobject["TotalPhysicalMemory"]));
-                RamSize.Text = "RAM size: " + Math.Round(Ram_Bytes / 1073741824, 1) + "GB";
+                Size = new Size(900, 500);
+
+                ManagementObjectSearcher Search = new ManagementObjectSearcher("Select TotalPhysicalMemory From Win32_ComputerSystem");
+                foreach (ManagementObject Mobject in Search.Get())
+                {
+                    double Ram_Bytes = (Convert.ToDouble(Mobject["TotalPhysicalMemory"]));
+                    RamSize.Text = "RAM size: " + Math.Round(Ram_Bytes / 1073741824, 1) + "GB";
+                }
+
+                int ProcID = Process.GetProcessesByName("taskkill_gui")[0].Id;
+                LogoText.Text = "taskkill gui (" + ProcID.ToString() + ")";
             }
 
-            int ProcID = Process.GetProcessesByName("taskkill_gui")[0].Id;
-            LogoText.Text = "taskkill gui (" + ProcID.ToString() + ")";
+            catch (IndexOutOfRangeException)
+            {
+                throw;
+            }
         }
 
         private void HelpButton2_Click(object sender, EventArgs e)
