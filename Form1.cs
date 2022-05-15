@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
+using System.Management;
 
 namespace taskkill_gui
 {
@@ -25,8 +19,8 @@ namespace taskkill_gui
         {
             if (e.Button == MouseButtons.Left)
             {
-                this.Left += e.X - lastPoint.X;
-                this.Top += e.Y - lastPoint.Y;
+                Left += e.X - lastPoint.X;
+                Top += e.Y - lastPoint.Y;
             }
         }
 
@@ -59,14 +53,22 @@ namespace taskkill_gui
 
         private void GUIForm_Load(object sender, EventArgs e)
         {
-            this.Size = new Size(900, 500);
+            Size = new Size(900, 500);
+
+            ManagementObjectSearcher Search = new ManagementObjectSearcher("Select TotalPhysicalMemory From Win32_ComputerSystem");
+            foreach (ManagementObject Mobject in Search.Get())
+            {
+                double Ram_Bytes = (Convert.ToDouble(Mobject["TotalPhysicalMemory"]));
+                RamSize.Text = "RAM size: " + Math.Round(Ram_Bytes / 1073741824, 1) + "GB";
+            }
+
             int ProcID = Process.GetProcessesByName("taskkill_gui")[0].Id;
             LogoText.Text = "taskkill gui (" + ProcID.ToString() + ")";
         }
 
         private void HelpButton2_Click(object sender, EventArgs e)
         {
-            this.Size = new Size(1400, 500);
+            Size = new Size(1400, 500);
             Process process = new Process();
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.UseShellExecute = false;

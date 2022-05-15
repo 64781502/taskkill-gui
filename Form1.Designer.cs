@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.HelpButton2 = new System.Windows.Forms.Button();
             this.TextBoxOut = new System.Windows.Forms.TextBox();
+            this.RamSize = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // PIDBox
@@ -175,12 +176,23 @@
             this.TextBoxOut.TabIndex = 13;
             this.TextBoxOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // RamSize
+            // 
+            this.RamSize.AutoSize = true;
+            this.RamSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RamSize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.RamSize.Location = new System.Drawing.Point(7, 9);
+            this.RamSize.Name = "RamSize";
+            this.RamSize.Size = new System.Drawing.Size(0, 25);
+            this.RamSize.TabIndex = 14;
+            // 
             // GUIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(1384, 461);
+            this.Controls.Add(this.RamSize);
             this.Controls.Add(this.TextBoxOut);
             this.Controls.Add(this.HelpButton2);
             this.Controls.Add(this.label2);
@@ -217,6 +229,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button HelpButton2;
         private System.Windows.Forms.TextBox TextBoxOut;
+        private System.Windows.Forms.Label RamSize;
     }
 }
 
