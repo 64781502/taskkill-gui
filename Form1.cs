@@ -60,29 +60,27 @@ namespace taskkill_gui
                 ManagementObjectSearcher Search = new ManagementObjectSearcher("Select TotalPhysicalMemory From Win32_ComputerSystem");
                 foreach (ManagementObject Mobject in Search.Get())
                 {
-                    double Ram_Bytes = (Convert.ToDouble(Mobject["TotalPhysicalMemory"]));
+                    double Ram_Bytes = Convert.ToDouble(Mobject["TotalPhysicalMemory"]);
                     RamSize.Text = "RAM size: " + Math.Round(Ram_Bytes / 1073741824, 1) + "GB";
                 }
 
                 int ProcID = Process.GetProcessesByName("taskkill_gui")[0].Id;
                 LogoText.Text = "taskkill gui (" + ProcID.ToString() + ")";
             }
-
-            catch (IndexOutOfRangeException)
-            {
-                throw;
-            }
+            catch { }
         }
 
         private void HelpButton2_Click(object sender, EventArgs e)
         {
             Size = new Size(1400, 500);
             Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            startInfo.UseShellExecute = false;
-            startInfo.RedirectStandardOutput = true;
-            startInfo.FileName = "cmd.exe";
-            startInfo.Arguments = "/c tasklist | sort /R /+58"; //tasklist
+            ProcessStartInfo startInfo = new ProcessStartInfo
+            {
+                UseShellExecute = false,
+                RedirectStandardOutput = true,
+                FileName = "cmd.exe",
+                Arguments = "/c tasklist | sort /R /+58" //tasklist
+            };
             process.StartInfo = startInfo;
             process.Start();
             string output = process.StandardOutput.ReadToEnd();
